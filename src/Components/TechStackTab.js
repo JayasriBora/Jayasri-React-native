@@ -1,12 +1,7 @@
 import React from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {sampleTechStacks} from '../Styles/Utils';
 
-const sampleTechStacks = [
-  {id: '1', techName: 'React JS', contact: 'Vamshi', memberCount: 12},
-  {id: '2', techName: 'Java', contact: 'Jani', memberCount: 9},
-  {id: '1', techName: 'React-Native', contact: 'Sharief', memberCount: 12},
-  {id: '2', techName: 'Angular', contact: 'Nishanth', memberCount: 9},
-];
 
 const TechStackTab = ({route}) => {
   const {verticalId} = route.params;

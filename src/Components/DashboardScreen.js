@@ -8,39 +8,7 @@ import {
   Image,
 } from 'react-native';
 
-const verticals = [
-  {
-    id: '1',
-    name: 'DE',
-    employeeCount: 10,
-    // logo: <Image source={require('../assests/bars.png')} />,
-  },
-  {
-    id: '2',
-    name: 'CDE',
-    employeeCount: 15,
-    // logo: require('../assets/cde_logo.png'),
-  },
-  {
-    id: '3',
-    name: 'Heritage',
-    employeeCount: 8,
-    // logo: require('../assets/heritage_logo.png'),
-  },
-  {
-    id: '4',
-    name: 'HR',
-    employeeCount: 20,
-    // logo: require('../assets/hr_logo.png'),
-  },
-  {
-    id: '5',
-    name: 'Talent Acquisition',
-    employeeCount: 5,
-    // logo: require('../assets/talent_acquisition_logo.png'),
-  },
-];
-
+import {verticals} from '../Styles/Utils';
 const DashboardScreen = ({navigation}) => {
   const handleVerticalPress = vertical => {
     navigation.navigate('VerticalDetails', {verticalId: vertical.id});

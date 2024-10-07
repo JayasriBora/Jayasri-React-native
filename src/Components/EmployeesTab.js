@@ -1,37 +1,7 @@
 import React from 'react';
 import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
+import {sampleEmployees} from '../Styles/Utils';
 
-const sampleEmployees = [
-  {
-    id: '1',
-    name: 'jayasri',
-    experience: '5 years',
-    empId: 'BTIN100146',
-    email: 'jaya@example.com',
-  },
-  {
-    id: '2',
-    name: 'dijisha',
-    experience: '3 years',
-    empId: 'BTIN100150',
-    email: 'diji@example.com',
-  },
-
-  {
-    id: '3',
-    name: 'poojitha',
-    experience: '3 years',
-    empId: 'BTIN100151',
-    email: 'poojitha@example.com',
-  },
-  {
-    id: '4',
-    name: 'prathyusha',
-    experience: '3 years',
-    empId: 'BTIN100152',
-    email: 'prathyusha@example.com',
-  },
-];
 
 const EmployeesTab = ({navigation, route}) => {
   const {verticalId} = route.params;

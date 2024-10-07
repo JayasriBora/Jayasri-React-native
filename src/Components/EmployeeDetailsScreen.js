@@ -1,20 +1,11 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-
+import {techStack,orgStructure} from '../Styles/Utils'
 const EmployeeDetailsScreen = ({route}) => {
   const {employeeId} = route.params;
   const [activeTab, setActiveTab] = useState('Projects'); 
 
-  const techStack = {
-    primary: 'JavaScript, React',
-    secondary: 'Node.js',
-  };
-
-  const orgStructure = {
-    L1: 'Manager Name',
-    L2: 'Team Lead Name',
-    Jr: 'Junior Developer Name',
-  };
+ 
 
   const renderContent = () => {
     switch (activeTab) {

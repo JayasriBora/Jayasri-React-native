@@ -7,56 +7,14 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native'; // Import navigation
+import {useNavigation} from '@react-navigation/native'; 
+import {postsData,eventsData} from '../Styles/Utils';
 
-const postsData = [
-  {
-    id: '1',
-    type: 'Anniversary',
-    comment:
-      'Celebrating 1 years with the company! It has been a wonderful journey so far...',
-    commentedName: 'Jayasri',
-    commentedDate: '2024-08-30',
-  },
-  {
-    id: '2',
-    type: 'Birthday',
-    comment: 'Happy Birthday to our dear colleague!',
-    commentedName: 'Soujanaya',
-    commentedDate: '2024-09-28',
-  },
-  {
-    id: '3',
-    type: 'Comment',
-    comment: 'Great work on the recent project. Keep it up!',
-    commentedName: 'Sharief',
-    commentedDate: '2024-09-25',
-  },
-];
-
-const eventsData = [
-  {
-    id: '1',
-    eventType: 'Team Building',
-    eventDuration: '3 Hours',
-    eventDescription: 'Team building activities to enhance collaboration.',
-    createdBy: 'HR Department',
-    eventDateTime: '2024-10-05 14:00',
-  },
-  {
-    id: '2',
-    eventType: 'Annual Conference',
-    eventDuration: 'Full Day',
-    eventDescription: 'Company-wide annual conference.',
-    createdBy: 'Admin',
-    eventDateTime: '2024-10-10 09:00',
-  },
-];
 
 const NewsFeedScreen = () => {
   const [activeTab, setActiveTab] = useState('Post');
   const [expandedItemId, setExpandedItemId] = useState(null);
-  const navigation = useNavigation(); // Get navigation object
+  const navigation = useNavigation(); 
 
   const renderPostItem = ({item}) => (
     <TouchableOpacity
@@ -65,6 +23,19 @@ const NewsFeedScreen = () => {
       }>
       <View style={styles.postCard}>
         <Text style={styles.type}>{item.type}</Text>
+        {item.type === 'Birthday' && (
+          <Image
+            source={require('../assests/birthday.png')}
+            style={styles.birthdayImage}
+          />
+        )}
+        {item.type === 'Anniversary' && (
+          <Image
+            source={require('../assests/anniversary.png')}
+            style={styles.anniversaryImages}
+          />
+        )}
+        
         <Text style={styles.comment}>
           {expandedItemId === item.id
             ? item.comment
@@ -80,6 +51,18 @@ const NewsFeedScreen = () => {
 
   const renderEventItem = ({item}) => (
     <View style={styles.postCard}>
+      {item.eventType === 'Team Building' && (
+        <Image
+          source={require('../assests/teambuild.png')}
+          style={styles.eventImage}
+        />
+      )}
+      {item.eventType === 'Annual Conference' && (
+        <Image
+          source={require('../assests/annual.png')}
+          style={styles.annualImage}
+        />
+      )}
       <Text style={styles.eventType}>{item.eventType}</Text>
       <Text style={styles.eventDescription}>{item.eventDescription}</Text>
       <Text style={styles.eventDetail}>Duration: {item.eventDuration}</Text>
@@ -176,7 +159,7 @@ const styles = StyleSheet.create({
   commentedDate: {
     color: 'grey',
   },
-    eventType: {
+  eventType: {
     fontWeight: 'bold',
     fontSize: 16,
     color: 'black',
@@ -202,10 +185,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  birthdayImage: {
+    width: 50,
+    height: 50,
+    marginBottom: 10,
+  },
+  anniversaryImages: {
+    width: 100,
+    height: 40,
+  },
   addButtonText: {
     color: 'white',
     fontSize: 24,
   },
+  eventImage: {
+    width: 50,
+    height: 40,
+    marginBottom: 10,
+  },
+  annualImage:{
+    width:80,
+    height:70
+  }
 });
 
 export default NewsFeedScreen;

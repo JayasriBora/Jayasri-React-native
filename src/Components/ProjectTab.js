@@ -1,13 +1,7 @@
 import React from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {sampleProjects} from '../Styles/Utils';
 
-const sampleProjects = [
-  {id: '1', name: 'Project A', lead: 'jani', memberCount: 5},
-  {id: '2', name: 'Project B', lead: 'kiruba', memberCount: 3},
-  {id: '3', name: 'Project C', lead: 'vivek', memberCount: 7},
-  {id: '4', name: 'Project D', lead: 'nishanth', memberCount: 6},
-  {id: '5', name: 'Project E', lead: 'sharief', memberCount: 8},
-];
 
 const ProjectsTab = ({route}) => {
   const {verticalId} = route.params;

@@ -247,9 +247,10 @@ const PostScreen = ({navigation}) => {
             required
           />
 
-          <View>
+         <View >
             <Button
               title="Select Date/Time"
+              
               onPress={() => setShowDatePicker(true)}
             />
             {showDatePicker && (
@@ -283,7 +284,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: 'lightgray',
+    backgroundColor: 'white',
   },
   topBar: {
     flexDirection: 'row',
@@ -293,7 +294,7 @@ const styles = StyleSheet.create({
   tab: {
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 7,
     borderWidth: 1,
     borderColor: '#ccc',
   },
@@ -308,7 +309,7 @@ const styles = StyleSheet.create({
     height: 100,
     borderColor: '#ccc',
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 10,
     padding: 10,
     marginBottom: 10,
     color: 'black',
@@ -316,6 +317,7 @@ const styles = StyleSheet.create({
   pickerContainer: {
     position: 'relative',
     marginBottom: 10,
+    borderRadius: 10,
   },
   picker: {
     height: 50,
@@ -336,6 +338,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
+    
+    
   },
 });
 
